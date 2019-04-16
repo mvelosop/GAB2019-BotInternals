@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Datalust.SerilogMiddlewareExample.Diagnostics;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Bot.Builder;
@@ -29,6 +30,7 @@ namespace SimpleWebApiBot
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMiddleware<SerilogMiddleware>();
             app.UseMvc();
         }
 
@@ -42,7 +44,7 @@ namespace SimpleWebApiBot
                 var logger = sp.GetRequiredService<ILogger<BotController>>();
 
                 var adapter = new BotFrameworkAdapter(
-                    credentialProvider: new SimpleCredentialProvider("", ""),
+                    credentialProvider: new SimpleCredentialProvider(),
                     logger: logger);
 
                 adapter.OnTurnError = async (context, exception) =>

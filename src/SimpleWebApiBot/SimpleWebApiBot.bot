@@ -2,14 +2,14 @@
     "name": "SimpleWebApiBot",
     "description": "",
     "services": [
-        {
-            "type": "endpoint",
-            "appId": "",
-            "appPassword": "",
-            "endpoint": "http://localhost:5000/simple-bot/messages",
-            "id": "00373d60-5ee6-11e9-b197-f5dc13fc6b56",
-            "name": "http://localhost:5000/simple-bot/messages"
-        }
+      {
+        "type": "endpoint",
+        "appId": "",
+        "appPassword": "",
+        "endpoint": "http://localhost:5000/simple-bot/messages",
+        "id": "00373d60-5ee6-11e9-b197-f5dc13fc6b56",
+        "name": "http://localhost:5000/simple-bot/messages"
+      }
     ],
     "padlock": "",
     "version": "2.0",
